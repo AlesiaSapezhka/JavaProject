@@ -7,30 +7,39 @@ public class MathOperations {
         int sub1 = subtract(10, 6);
         int multi1 = multiply(16, 9);
         float div1 = divide(60, 7);
-        System.out.println("Summarization:" + sum1);
-        System.out.println("Multiplication:" + multi1);
-        System.out.println("Subtraction:" + sub1);
-        System.out.println("Divide:" + div1);
+        System.out.println("Summarization: " + sum1);
+        System.out.println("Multiplication: " + multi1);
+        System.out.println("Subtraction: " + sub1);
+        System.out.println("Divide: " + div1);
+
         int maxNumber = findMax(-9, 88);
-        System.out.println(maxNumber);
+        System.out.println("Max number: " + maxNumber);
+
         int diff1 = diff( 10, 20);
-        System.out.println(diff1);
+        System.out.println("Value of difference between numbers: " +diff1);
+
         int area = squareArea(7);
-        int perimetr = squarePerimeter(9);
+        int perimeter = squarePerimeter(9);
         System.out.println("The area of the square is: " + area);
-        System.out.println("The perimetr of the square is: " + perimetr);
+        System.out.println("The perimeter of the square is: " + perimeter);
+
         int minutes = convertSecondsToMinutes(360);
-        System.out.println(minutes);
+        System.out.println("Seconds value converted to minutes: " + minutes);
+
         double speed = averageSpeed (500, 5);
-        System.out.println(speed);
+        System.out.println("Average speed: " + speed);
+
         double hypotenuse = findHypotenuse (5, 5);
-        System.out.println(hypotenuse);
+        System.out.println("Hypotenuse: " + hypotenuse);
+
         double circleLength = circleCircumference(5);
-        System.out.println(circleLength);
+        System.out.println("Circle Circumference: " + circleLength);
+
         double percentage = calculatePercentage(200, 25);
-        System.out.println(percentage + "%");
-        double celsius = fahrenheitToCelsius(773.6);
-        double fahrenheit = celsiusToFahrenheit( 412.777777);
+        System.out.println("Percentage: " + percentage + "%");
+
+        String celsius = fahrenheitToCelsius(775);
+        String fahrenheit = celsiusToFahrenheit( 412);
         System.out.println("Fahrenheit is: " + fahrenheit);
         System.out.println("Celsius is: " + celsius);
     }
@@ -48,7 +57,9 @@ public class MathOperations {
     }
 
     public static float divide(int x, int y){
-        return (float) x / y;
+        if (y == 0) {
+            throw new ArithmeticException("Divide by zero forbitten");
+        } return (float) x / y;
     }
 
     public static int findMax (int a, int b){
@@ -72,26 +83,30 @@ public class MathOperations {
     }
 
     public static double averageSpeed(double distance, double time){
-        return distance / time;
+        if (time == 0) {
+            throw new ArithmeticException("Speed can't be equal to zero");
+        }return distance / time;
     }
 
     public static double findHypotenuse(double a, double b){
-        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        return Math.round(Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)));
     }
 
     public static double circleCircumference(double radius) {
-        return 2 * Math.PI * radius;
+        return Math.round(2 * Math.PI * radius);
     }
 
     public static double calculatePercentage(double total, double part){
        return  100 * part / total;
     }
 
-    public static double celsiusToFahrenheit(double c) {
-        return c * 9 / 5 + 32;
+    public static String celsiusToFahrenheit(double c) {
+        double value = c * 9 / 5 + 32;
+        return String.format("%.3f", value);
     }
 
-    public static double fahrenheitToCelsius(double f) {
-        return (f - 32) * 5 / 9;
+    public static String fahrenheitToCelsius(double f) {
+        double value = (f - 32) * 5 / 9;
+        return String.format("%.3f", value);
     }
 }

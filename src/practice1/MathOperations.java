@@ -1,4 +1,4 @@
-package main;
+package practice1;
 
 public class MathOperations {
 

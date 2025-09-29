@@ -59,7 +59,8 @@ public class MathOperations {
     public static float divide(int x, int y){
         if (y == 0) {
             throw new ArithmeticException("Divide by zero forbitten");
-        } return (float) x / y;
+        }
+        return (float) x / y;
     }
 
     public static int findMax (int a, int b){
@@ -85,7 +86,8 @@ public class MathOperations {
     public static double averageSpeed(double distance, double time){
         if (time == 0) {
             throw new ArithmeticException("Speed can't be equal to zero");
-        }return distance / time;
+        }
+        return distance / time;
     }
 
     public static double findHypotenuse(double a, double b){

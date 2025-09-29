@@ -1,8 +1,8 @@
 package practice2;
 
 public class Reactangle {
-    float width;
-    float height;
+    private float width;
+    private final float height;
 
     Reactangle(float width, float height){
         this.width = width;

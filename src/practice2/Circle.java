@@ -2,7 +2,8 @@ package practice2;
 
 public class Circle {
 
-    double radius;
+    private double radius;
+
     Circle(double radius) {
         this.radius = radius;
     }

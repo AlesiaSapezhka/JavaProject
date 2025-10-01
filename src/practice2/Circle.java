@@ -13,7 +13,11 @@ public class Circle {
     }
 
     void setRadius(double newRadius) {
-        this.radius = newRadius;
+        if (newRadius > 0) {
+            this.radius = newRadius;
+        } else {
+            System.out.println("Radius cannot be negative or zero");
+        }
     }
 
     String calculateArea(){
@@ -22,7 +26,7 @@ public class Circle {
     }
 
     String circleCircumference() {
-        double value = Math.round(2 * Math.PI * this.radius);
+        double value = 2 * Math.PI * this.radius;
         return String.format("%.3f", value);
     }
 }

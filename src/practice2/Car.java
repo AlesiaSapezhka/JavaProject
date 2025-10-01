@@ -23,7 +23,11 @@ public class Car {
     }
 
     void setYear(int newYear){
-        this.year = newYear;
+        if (newYear>0) {
+            this.year = newYear;
+        } else {
+            System.out.println("Invalid year");
+        }
     }
 
     void print(){

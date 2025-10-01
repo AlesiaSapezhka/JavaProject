@@ -22,7 +22,11 @@ public class StudentGroup {
     }
 
     void setStudentCount(int newStudentCount) {
-        this.studentCount = newStudentCount;
+        if (newStudentCount>=0){
+            this.studentCount = newStudentCount;
+        } else {
+            System.out.println("Invalid student count");
+        }
     }
 
     void printInfo(){

@@ -22,7 +22,11 @@ public class Laptop {
     }
 
     void setPrice(int newPrice) {
-        this.price = newPrice;
+        if (newPrice>0){
+            this.price = newPrice;
+        } else {
+            System.out.println("Price cannot be negative or zero");
+        }
     }
 
     void printInfo() {

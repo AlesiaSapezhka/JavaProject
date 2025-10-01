@@ -22,11 +22,19 @@ public class BankAccount {
     }
 
     void setDeposit(double money){
-        this.balance = this.balance + money;
+        if (money >=0) {
+            this.balance = this.balance + money;
+        } else {
+            System.out.println("Deposited money is negative");
+        }
     }
 
     void setWithdraw(double money){
-        this.balance = this.balance - money;
+        if (money >=0) {
+            this.balance = this.balance - money;
+        } else {
+            System.out.println("Withdraw money is negative");
+        }
     }
 
     void printBalance(){

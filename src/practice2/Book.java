@@ -2,7 +2,7 @@ package practice2;
 
 public class Book {
     private String title;
-    private final String author;
+    private String author;
 
     Book(String title, String author) {
         this.title = title;
@@ -22,7 +22,7 @@ public class Book {
     }
 
     void setTAuthor( String newAuthor){
-        this.title = newAuthor;
+        this.author = newAuthor;
     }
 
     void printInfo(){

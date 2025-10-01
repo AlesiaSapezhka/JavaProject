@@ -2,15 +2,15 @@ package practice2;
 
 public class Main {
 
-    public static void main (String[] args) {
+    static void main(String[] args) {
 
         // Class Car
         Car bmw = new Car ("BMW", 2006);
         bmw.setYear(2015);
         bmw.print();
 
-        // Class Reactangle
-        Reactangle rectangle1 = new Reactangle(4, 7);
+        // Class Rectangle
+        Rectangle rectangle1 = new Rectangle(4, 7);
         rectangle1.setWidth(3);
         System.out.println("Value of rectangle area: " + rectangle1.calculateArea());
 

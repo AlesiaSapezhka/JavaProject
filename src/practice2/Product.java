@@ -18,11 +18,19 @@ public class Product {
     }
 
     void setPrice(int newPrice) {
-        this.price = newPrice;
+        if (newPrice>0){
+            this.price = newPrice;
+        } else {
+            System.out.println("Price cannot be negative or zero");
+        }
     }
 
    void applyDiscount(double discount) {
-        this.price = this.price - this.price * discount / 100;
+        if (discount>0) {
+            this.price = this.price - this.price * discount / 100;
+        }  else {
+            System.out.println("Discount value can not be negative or zero");
+        }
    }
 
    void printInfo(){

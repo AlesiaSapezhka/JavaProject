@@ -7,19 +7,19 @@ public class Library {
     int year;
     public String category;
 
-    String getBookTitle( String bookTitle) {
+    String getBookTitle( ) {
         return this.bookTitle;
     }
 
-    String getAuthor( String author) {
+    String getAuthor( ) {
         return this.author;
     }
 
-    int getYear(String year) {
+    int getYear() {
         return this.year;
     }
 
-    String getCategory(String category) {
+    String getCategory() {
         return this.category;
     }
 

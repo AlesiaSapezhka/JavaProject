@@ -21,7 +21,7 @@ public class GameSettings {
 
     int addPlayer() {
         if (currentPlayers<=maxPlayers){
-            return currentPlayers++;
+            return ++currentPlayers;
         } else {
             return currentPlayers;
         }

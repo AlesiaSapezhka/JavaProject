@@ -4,17 +4,19 @@ import java.util.Scanner;
 
 public class ForTaskSolver {
     static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         // 1. Вывод чисел от 1 до 100, делящихся на 3
         numbersDividedByThree();
 
         // 2. Сумма чисел от 1 до n
-        System.out.println("Sum of numbers from 1 to given number: " + sumOfNumbersFromConsole());
+        System.out.println("Сумма чисел от одного до введенного числа " + sumOfNumbersFromConsole(scanner));
 
         // 3. Таблица умножения для числа
-        multiplyTable();
+        multiplyTable(scanner);
 
         //4. Проверка на простое число
-        ifNumberIsSimple();
+        ifNumberIsSimple(scanner);
 
         //5. Вывод чисел от 1 до 10
         printNumbersFromOneToTen();
@@ -29,9 +31,8 @@ public class ForTaskSolver {
     }
 
     // 2. Сумма чисел от 1 до n
-    public static int sumOfNumbersFromConsole () {
-        System.out.print("Enter number ");
-        Scanner scanner = new Scanner(System.in);
+    public static int sumOfNumbersFromConsole (Scanner scanner) {
+        System.out.print("Введите число ");
         int numberFromConsole = scanner.nextInt();
         int sum = 0;
         for (int i = 1; i <= numberFromConsole; i++) {
@@ -41,9 +42,8 @@ public class ForTaskSolver {
     }
 
     //3. Таблица умножения для числа
-    public static void multiplyTable () {
-        System.out.print("Enter number ");
-        Scanner scanner = new Scanner(System.in);
+    public static void multiplyTable (Scanner scanner) {
+        System.out.print("Введите число ");
         int numberFromConsole = scanner.nextInt();
 
         for (int i = 1; i <= 10; i++){
@@ -52,21 +52,22 @@ public class ForTaskSolver {
     }
 
     //4. Проверка на простое число
-    public static void ifNumberIsSimple() {
-        System.out.print("Enter number ");
-        Scanner scanner = new Scanner(System.in);
+    public static void ifNumberIsSimple(Scanner scanner) {
+        System.out.print("Введите число ");
         int numberFromConsole = scanner.nextInt();
 
-        boolean numberIsSimple = false;
-        for (int i=2; i<numberFromConsole; i++){
-            if (numberFromConsole % i == 0) {
-                numberIsSimple = false;
-                break;
+        boolean numberIsSimple = true;
+        if(numberFromConsole<=1){
+            numberIsSimple = false;
             } else {
-                numberIsSimple = true;
+            for (int i=2; i<numberFromConsole; i++){
+                if (numberFromConsole % i == 0) {
+                    numberIsSimple = false;
+                    break;
+                }
             }
         }
-        System.out.println("Is number simple? " + numberIsSimple);
+        System.out.println("Число простое? - " + numberIsSimple);
     }
 
     //5. Вывод чисел от 1 до 10

@@ -5,20 +5,20 @@ import java.util.Scanner;
 public class WhileTaskSolver {
 
     static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
     // 1. Вычисление факториала с помощью while
-    System.out.println("Factorial of number:" + factorial());
+    System.out.println("Факториал числа:" + factorial(scanner));
 
     // 2. Вывод всех чётных чисел до заданного
-    printEvenNumbers();
+    printEvenNumbers(scanner);
 
     // 3. Обратный отсчёт от введённого числа до 1
-    printNumbers();
+    printNumbers(scanner);
     }
 
     // 1. Вычисление факториала с помощью while
-    public static int factorial (){
-        System.out.print("Enter number ");
-        Scanner scanner = new Scanner(System.in);
+    public static int factorial (Scanner scanner){
+        System.out.print("Введите число ");
         int numberFromConsole = scanner.nextInt();
         int result = 1;
         int i = 1;
@@ -30,12 +30,11 @@ public class WhileTaskSolver {
 
     }
     //2. Вывод всех чётных чисел до заданного
-    public static void printEvenNumbers (){
-        System.out.print("Enter number ");
-        Scanner scanner = new Scanner(System.in);
+    public static void printEvenNumbers (Scanner scanner){
+        System.out.print("Введите число ");
         int numberFromConsole = scanner.nextInt();
         int startNumber = 1;
-        System.out.print("Even numbers: ");
+        System.out.print("Четные числа: ");
         while (startNumber<=numberFromConsole){
             if (startNumber%2==0){
                 System.out.print(startNumber + ", ");
@@ -47,16 +46,15 @@ public class WhileTaskSolver {
     }
 
     //3. Обратный отсчёт от введённого числа до 1
-    public static void printNumbers () {
-        System.out.print("Enter positive number ");
-        Scanner scanner = new Scanner(System.in);
+    public static void printNumbers (Scanner scanner) {
+        System.out.print("Введите положительное число ");
         int numberFromConsole = scanner.nextInt();
         if (numberFromConsole>0) {
-            System.out.print("Numbers in descending order: ");
+            System.out.print("Числа в порядке убывания: ");
             while (numberFromConsole >= 1) {
                 System.out.print(numberFromConsole + ", ");
                 numberFromConsole--;
             }
-        } else System.out.print("Invalid input");
+        } else System.out.print("Введено неверное число");
     }
 }

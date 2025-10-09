@@ -4,44 +4,43 @@ import java.util.Scanner;
 
 public class DoWhileTaskSolver {
     static void main(String[] args) {
+
+    Scanner scanner = new Scanner(System.in);
     // 1. Запрос положительного числа
-    positiveNumber();
+    positiveNumber(scanner);
 
     // 2. Проверка пароля
-    checkPassword();
+    checkPassword(scanner);
 
     // 3. Вывод чисел от 1 до 10 с использованием do-while
     printNumbersFromOneToTen();
 
     // 4. Завершение программы по команде "exit"
-    exitProgram();
+    exitProgram(scanner);
 
     // 5. Подсчёт количества цифр в числе
-    countDigitsFromNumber();
+    countDigitsFromNumber(scanner);
     }
 
     //1. Запрос положительного числа
-    public static void positiveNumber(){
-        Scanner scanner = new Scanner(System.in);
-
+    public static void positiveNumber(Scanner scanner){
         int numberFromConsole;
         do {
-            System.out.print("Enter number ");
+            System.out.print("Введите число ");
             numberFromConsole = scanner.nextInt();
         }
         while (numberFromConsole<0);
-        System.out.print("Positive number found");
+        System.out.print("Позитивное число найдено");
     }
 
     //2. Проверка пароля
-    public static void checkPassword(){
-        Scanner scanner = new Scanner(System.in);
+    public static void checkPassword(Scanner scanner){
         String password = "Hello";
         do {
-            System.out.print("Enter password ");
+            System.out.print("Введите пароль ");
             password = scanner.nextLine();
         } while ( !password.equals("hello"));
-        System.out.print("Password entered correctly");
+        System.out.print("Пароль введен корректно");
     }
 
     //3. Вывод чисел от 1 до 10 с использованием do-while
@@ -54,20 +53,18 @@ public class DoWhileTaskSolver {
     }
 
     //4. Завершение программы по команде "exit"
-    public static void exitProgram(){
-        Scanner scanner = new Scanner(System.in);
+    public static void exitProgram(Scanner scanner){
         String secretWord = "Hello";
         do {
-            System.out.print("Enter password ");
+            System.out.print("Введите команду ");
             secretWord = scanner.nextLine();
         } while ( !secretWord.equals("exit"));
-        System.out.print("Word entered correctly");
+        System.out.print("Команда введена корректно");
 
     }
 
     //5. Подсчёт количества цифр в числе
-    public static void countDigitsFromNumber(){
-        Scanner scanner = new Scanner(System.in);
+    public static void countDigitsFromNumber(Scanner scanner){
         System.out.print("Enter number ");
         int numberFromConsole = scanner.nextInt();
 

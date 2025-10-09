@@ -4,126 +4,121 @@ import java.util.Scanner;
 
 public class IfElseTaskSolver {
     static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         // 1. Определение знака числа
-        signOfNumber();
+        signOfNumber(scanner);
 
         // 2. Поиск наибольшего из двух чисел
-        maxNumber();
+        maxNumber(scanner);
 
         // 3. Вывод оценки по шкале 1–5
-        markDescription();
+        markDescription(scanner);
 
         // 4. Проверка на чётность
-        isNumberEven();
+        isNumberEven(scanner);
 
         // 5. Определение размера скидки по возрасту
-        discountValue();
+        discountValue(scanner);
 
         // 6. Оценка результата теста по баллам
-        testResultsDescription ();
+        testResultsDescription (scanner);
 
     }
 
     // 1. Определение знака числа
-    public static void signOfNumber(){
-       System.out.print("Enter number ");
-       Scanner scanner = new Scanner(System.in);
+    public static void signOfNumber(Scanner scanner){
+       System.out.print("Введите число ");
        int valueFromConsole = scanner.nextInt();
 
         if (valueFromConsole > 0) {
-            System.out.println("Number is positive");
+            System.out.println("Число положительно");
         } else if (valueFromConsole <0){
-            System.out.println("Number is negative");
+            System.out.println("Число отрицательное");
         } else {
-            System.out.println("Number is zero");
+            System.out.println("Цифра равна нулю");
         }
     }
 
     // 2. Поиск наибольшего из двух чисел
-    public static void maxNumber (){
-       System.out.print("Enter number1 ");
-       Scanner scanner = new Scanner(System.in);
+    public static void maxNumber (Scanner scanner){
+       System.out.print("Введите число1 ");
        int a= scanner.nextInt();
 
-       System.out.print("Enter number2 ");
-       Scanner scanner1 = new Scanner(System.in);
-       int b = scanner1.nextInt();
+       System.out.print("Введите число2 ");
+       int b = scanner.nextInt();
 
        if (a > b){
-           System.out.println("Max number: " + a);
+           System.out.println("Максимальное число: " + a);
        } else if (a==b){
-           System.out.println("Numbers are equal");
+           System.out.println("Числа равны");
        }
        else {
-           System.out.println("Max number: " + b);
+           System.out.println("Максимальное число: " + b);
        }
     }
 
    // 3. Вывод оценки по шкале 1–5
-   public static void markDescription(){
-       System.out.print("Enter mark ");
-       Scanner scanner = new Scanner(System.in);
+   public static void markDescription(Scanner scanner){
+       System.out.print("Введите оценку ");
        int mark = scanner.nextInt();
 
         if (mark == 5){
-            System.out.println("Very nice");
+            System.out.println("Отлично");
         } else if (mark == 4){
-            System.out.println("Nice");
+            System.out.println("Хорошо");
         } else if (mark == 3){
-            System.out.println("Good");
+            System.out.println("Удовлетворительно");
         } else if (mark == 2 || mark == 1) {
-            System.out.println("Bad");
+            System.out.println("Неудовлетворительно");
         } else {
-            System.out.println("Mark is not included within grade from 1 to 5");
+            System.out.println("Введенная оценка не входит в промежуток от 1 to 5");
         }
     }
 
     // 4. Проверка на чётность
-   public static void isNumberEven (){
-       System.out.print("Enter number ");
-       Scanner scanner = new Scanner(System.in);
+   public static void isNumberEven (Scanner scanner){
+       System.out.print("Введите число ");
        int a = scanner.nextInt();
 
        String result = "";
        if (a%2==0){
-           result = "Number is Even";
+           result = "Число четное";
        } else {
-           result = "Number is Odd";
+           result = "Число нечетное";
        }
        System.out.println(result);
     }
 
     // 5. Определение размера скидки по возрасту
-   public static void discountValue () {
-       System.out.print("Enter age ");
-       Scanner scanner = new Scanner(System.in);
+   public static void discountValue (Scanner scanner) {
+       System.out.print("Введите взраст ");
        int age = scanner.nextInt();
        String discount = "";
        if (age >0 && age < 18) {
-               discount = "Discount value: 25%";
+               discount = "Сумма скидки - 25%";
            } else if (age >= 65 && age<=105) {
-               discount = "Discount value: 30%";
+               discount = "Сумма скидки - 30%";
            } else {
-               discount = "No discount";
+               discount = "Скидка не предоставляется";
            }
            System.out.println(discount);
        }
 
   // 6. Оценка результата теста по баллам
-   public static void testResultsDescription (){
-       System.out.print("Enter test result value ");
-       Scanner scanner = new Scanner(System.in);
+   public static void testResultsDescription (Scanner scanner){
+       System.out.print("Введите результат теста ");
        int testResult = scanner.nextInt();
        
        if (testResult >= 0 && testResult <= 100) {
            if (testResult >= 90) {
-               System.out.println("Test result description - Very nice");
+               System.out.println("Отлично");
            } else if (testResult >= 75 && testResult <= 89) {
-               System.out.println("Test result description - Nice");
+               System.out.println("Хорошо");
            } else if (testResult >= 60 && testResult <= 74) {
-               System.out.println("Test result description - Good");
+               System.out.println("Удовлетворительно");
            } else {
-               System.out.println("Test result description - Not good");
+               System.out.println("Неудовлетворительно");
            }
        }
     }

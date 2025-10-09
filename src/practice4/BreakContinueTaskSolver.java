@@ -5,33 +5,34 @@ import java.util.Scanner;
 public class BreakContinueTaskSolver {
 
     static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         // 1. Сумма чисел до первого отрицательного (использовать break)
-        sumOfPositiveNumbers();
+        sumOfPositiveNumbers(scanner);
 
         // 2. Пропуск чисел, делящихся на 3 (использовать continue)
         printNumbersNotDividedToThree();
 
         // 3. Вывод только положительных чисел (использовать continue)
-        printPositiveNumbers();
+        printPositiveNumbers(scanner);
 
         // 4. Ввод строк до команды "stop" (использовать break)
-        printStringUntilCommandStop();
+        printStringUntilCommandStop(scanner);
     }
 
     // 1. Сумма чисел до первого отрицательного (использовать break)
-    public static void sumOfPositiveNumbers() {
-        Scanner scanner = new Scanner(System.in);
+    public static void sumOfPositiveNumbers(Scanner scanner) {
         int numberFromConsole;
         int sum = 0;
         while (true) {
-            System.out.print("Enter number ");
+            System.out.print("Введите число ");
             numberFromConsole = scanner.nextInt();
             if (numberFromConsole < 0) {
                 break;
             }
             sum = sum + numberFromConsole;
         }
-        System.out.print("Sum of entered numbers:" + sum);
+        System.out.print("Сумма введенных чисел: " + sum);
     }
 
     //2. Пропуск чисел, делящихся на 3 (использовать continue)
@@ -42,16 +43,15 @@ public class BreakContinueTaskSolver {
             }
             System.out.print(i + ", ");
         }
-       System.out.println("Numbers which are not divide to three: ");
+       System.out.println("Числа, которые не делятся на три : ");
     }
 
     //3. Вывод только положительных чисел (использовать continue)
-    public static void printPositiveNumbers() {
-        Scanner scanner = new Scanner(System.in);
+    public static void printPositiveNumbers(Scanner scanner) {
 
         int numberFromConsole;
         do {
-            System.out.print("Enter Number: ");
+            System.out.print("Введите число : ");
 
             numberFromConsole = scanner.nextInt();
             if (numberFromConsole < 0) {
@@ -60,23 +60,22 @@ public class BreakContinueTaskSolver {
             if (numberFromConsole == 0) {
                 break;
             }
-            System.out.println("Value of positive numbers: " + numberFromConsole + ", ");
+            System.out.println("Положительные числа: " + numberFromConsole + ", ");
             System.out.println();
         } while (true);
     }
 
     //4. Ввод строк до команды "stop" (использовать break)
-    public static void printStringUntilCommandStop() {
-        Scanner scanner = new Scanner(System.in);
+    public static void printStringUntilCommandStop(Scanner scanner) {
         String wordFromConsole;
 
         while (true) {
-            System.out.print("Enter string ");
+            System.out.print("Введите команду ");
             wordFromConsole = scanner.nextLine();
             if (wordFromConsole.equals("stop")) {
                 break;
             }
-            System.out.println("Entered text: " + wordFromConsole);
+            System.out.println("Введите команду: " + wordFromConsole);
         }
     }
 }

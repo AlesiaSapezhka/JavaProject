@@ -1,7 +1,7 @@
 package practice5.See;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         SeaAnimals shark = new Shark();
         SeaAnimals seeStar = new SeaStar();

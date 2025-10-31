@@ -1,6 +1,6 @@
 package practice5.Museum;
 
-public class Manuscript extends Ecsponat {
+public class Manuscript extends Exponat {
     @Override
     void history(){
         System.out.print("Древний текст.");

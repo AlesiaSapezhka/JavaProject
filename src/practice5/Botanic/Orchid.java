@@ -1,6 +1,6 @@
 package practice5.Botanic;
 
-public class Orhid  extends Plant{
+public class Orchid extends Plant{
 
     @Override
     public void care(){

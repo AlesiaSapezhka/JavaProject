@@ -1,10 +1,10 @@
 package practice5.Botanic;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
-        Plant cactuc = new Cactuc();
-        Plant orhid = new Orhid();
+        Plant cactuc = new Cactus();
+        Plant orhid = new Orchid();
         PlantManager manager = new PlantManager();
 
         manager.care(cactuc);

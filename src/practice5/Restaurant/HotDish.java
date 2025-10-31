@@ -1,4 +1,4 @@
-package practice5.Restarant;
+package practice5.Restaurant;
 
 public class HotDish extends Dish {
     private final int TEMPERATURE = 50;

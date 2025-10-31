@@ -1,4 +1,4 @@
-package practice5.Restarant;
+package practice5.Restaurant;
 
 public abstract class Dish {
     private final String dishName;

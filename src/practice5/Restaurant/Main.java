@@ -1,7 +1,7 @@
-package practice5.Restarant;
+package practice5.Restaurant;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         Dish hotDish = new HotDish("суп", 7);
         Dish drink = new Drink("сок", 2);

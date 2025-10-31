@@ -2,12 +2,12 @@ package practice5.Museum;
 
 public class Worker {
 
-    Ecsponat ecsponat;
-    public void setEcsponat(Ecsponat ecsponat){
-        this.ecsponat = ecsponat;
+    Exponat exponat;
+    public void setEcsponat(Exponat exponat){
+        this.exponat = exponat;
     }
-    public void showEcsponat(Ecsponat ecsponat){
-        ecsponat.history();
-        ecsponat.preserve();
+    public void showEcsponat(Exponat exponat){
+        exponat.history();
+        exponat.preserve();
     }
 }

@@ -1,6 +1,6 @@
 package practice5.Museum;
 
-public class Sculpture extends Ecsponat{
+public class Sculpture extends Exponat {
     @Override
     void history(){
         System.out.print("Скульптурный объект.");

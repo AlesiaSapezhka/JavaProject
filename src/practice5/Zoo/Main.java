@@ -1,7 +1,7 @@
 package practice5.Zoo;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Animal bird = new Bird();
         Animal elephant = new Elephant();
         ZooManager zooManager = new ZooManager();

@@ -1,4 +1,4 @@
-package practice5.Restarant;
+package practice5.Restaurant;
 
 public class Manager {
     private Dish dish;

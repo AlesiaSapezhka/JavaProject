@@ -12,7 +12,7 @@ public class Main {
     task1.addNumber(6);
     task1.addNumber(8);
     task1.addNumber(7);
-    task1.addNumber(7);
+    task1.addNumber(7); // Не добавиться, ибо Set не допускает дубликатов
     System.out.println(task1.numbers);
     task1.printNumbers();
 

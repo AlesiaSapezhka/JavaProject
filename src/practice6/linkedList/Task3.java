@@ -7,11 +7,11 @@ public class Task3 {
     // Создайте LinkedList, содержащий несколько строк.
     // Напишите программу, которая печатает первый и последний элементы списка.
 
-    LinkedList linkedList = new LinkedList();
-    public void printFirstAndLast(LinkedList linkedList) {
+    LinkedList<String> linkedList = new LinkedList<>();
+    public void printFirstAndLast(LinkedList<String> linkedList) {
        if(!linkedList.isEmpty()){
-           String firstElement = linkedList.getFirst().toString();
-           String lastElement = linkedList.getLast().toString();
+           String firstElement = linkedList.getFirst();
+           String lastElement = linkedList.getLast();
            System.out.println("First element: " + firstElement + ". Last element: " + lastElement);
        }
 

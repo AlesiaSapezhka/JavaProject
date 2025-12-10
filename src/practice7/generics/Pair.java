@@ -4,8 +4,8 @@ public class Pair <T,U> {
     // Создайте класс Pair, который может хранить два объекта разных типов.
     // Класс должен позволять получать и устанавливать каждый из этих объектов.
 
-    T first;
-    U second;
+    private T first;
+    private U second;
     public Pair(T first, U second) {
         this.first = first;
         this.second = second;
@@ -21,8 +21,7 @@ public class Pair <T,U> {
     public void setSecond(U second){
         this.second = second;
     };
-    public U geSecond(){
+    public U getSecond(){
         return second;
     }
-
 }

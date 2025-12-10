@@ -1,12 +1,35 @@
 package practice7.exceptions;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Checker {
-    public static void main(String[] args) throws AgeCheckException, EmailCheckException {
-        ageChecker(9);
-        ageChecker(-8);
-        emailChecker("789@");
-        emailChecker("908ksoss");
-        emailChecker("alesia@gmail.com");
+    public static void main(String[] args)  {
+        try {
+            ageChecker(9);
+        } catch (AgeCheckException e){
+            System.out.println("Age error " + e.getMessage());
+        }
+        try {
+            ageChecker(-8);
+        } catch (AgeCheckException e){
+            System.out.println("Age error " + e.getMessage());
+        }
+        try {
+            emailChecker("789@");
+        } catch (EmailCheckException e){
+            System.out.println("Email error " + e.getMessage());
+        }
+        try {
+            emailChecker("908ksoss");
+        } catch (EmailCheckException e){
+            System.out.println("Email error " + e.getMessage());
+        }
+        try {
+            emailChecker("alesia@gmail.com");
+        } catch (EmailCheckException e){
+            System.out.println("Email error " + e.getMessage());
+        }
 
     }
 
@@ -23,11 +46,14 @@ public class Checker {
     // 4. Условие задачи: Напишите функцию, которая принимает строку в качестве аргумента и проверяет, является ли строка правильным электронным адресом.
     // Если строка не удовлетворяет критериям, функция должна выбрасывать непроверяемое исключение.
 
-    public static void emailChecker (String email) throws EmailCheckException{
-        if (email.contains("@") && email.length()>=10){
-            System.out.println("Email is valid");
-        } else {
-            throw new EmailCheckException("Not valid email");
+    public static void emailChecker (String email) {
+        String regex ="^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+
+        if (!matcher.matches()) {
+            throw new EmailCheckException("Wrong email format " + email);
         }
+        System.out.println("Email is valid: " + email);
     }
 }

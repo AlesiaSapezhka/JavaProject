@@ -1,6 +1,7 @@
 package practice7.exceptions;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class FileNotFoundExceptionExample {
 //   1. Условие задачи:
@@ -13,5 +14,14 @@ public class FileNotFoundExceptionExample {
         catch (FileNotFoundException e){
             System.out.println("File not found " + e.getMessage());
         }
+        finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    System.out.println("Ошибка закрытия файла: " + e.getMessage());
+                }
+            }
         }
+    }
 }

@@ -1,14 +1,14 @@
 package practice7.generics;
 
 public class Storage <T>{
-    T item;
+    private T item;
     public Storage(T item){
         this.item = item;
     }
-    void set(T item){
+    public void setItem (T item){
         this.item = item;
     }
-    T getItem(){
+    public T getItem(){
         return item;
     }
 }

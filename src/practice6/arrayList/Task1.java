@@ -12,9 +12,10 @@ public class Task1 {
     public void addNumber(Integer number) {
         numbersArrayList.add(number);
     };
-
     // Метод для выведа всего списка.
     public void showArray(){
         System.out.println(numbersArrayList);
     }
+
+
 }

@@ -10,16 +10,16 @@ public class MainForStreamAPIAgregate {
         // 1. Поиск максимального элемента
         //Задача: Напишите программу, которая принимает список чисел и находит в нём самое большое число, используя Stream API.
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        List <Integer> maxNumber = Collections.singletonList(numbers.stream()
+        Integer maxNumber = numbers.stream()
                 .max(Comparator.naturalOrder())
-                .get());
+                .orElseThrow();
         System.out.println(maxNumber);
 
         //2. Поиск минимального элемента
         //Задача: Напишите программу, которая принимает список чисел и находит в нем наименьшее число, используя Stream API.
-        List<Integer> minNumber = Collections.singletonList(numbers.stream()
+        Integer minNumber = numbers.stream()
                 .min(Comparator.naturalOrder())
-                .get());
+                .orElseThrow();
         System.out.println(minNumber);
 
         //3. Сумма всех элементов списка
@@ -32,10 +32,17 @@ public class MainForStreamAPIAgregate {
         //Задача: Напишите программу, которая принимает список строк и находит первую строку, начинающуюся на букву "Б", используя Stream API.
 
         List<String> words = Arrays.asList("Hello", "Anna", "Bob", "Daniel");
-        String firstWordStartedWithB = String.valueOf(words.stream()
-                .filter(word->word.startsWith("B"))
-                .findFirst());
-        System.out.println(firstWordStartedWithB);
+
+        try {
+            String firstWordStartedWithB = words.stream()
+                    .filter(word->word.startsWith("B"))
+                    .findFirst()
+                    .orElseThrow(() -> new RuntimeException ("Word not found"));
+
+            System.out.println(firstWordStartedWithB);
+        } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
 
         //5. Проверка наличия хотя бы одного элемента по условию
         //Задача: Напишите программу, которая проверяет, есть ли хотя бы один элемент в списке, который удовлетворяет заданному условию (например, является чётным числом), используя Stream API.

@@ -10,8 +10,17 @@ public class MainForFIAndLambda {
         MathOperators add = (x,y) -> x+y;
         MathOperators sub = (x,y) -> x-y;
         MathOperators mul = (x,y) -> x*y;
-        MathOperators div = (x,y) -> x/y;
-
+        MathOperators div = (x,y) -> {
+            if (y==0) {
+                throw new ArithmeticException("Division by zero forbidden");
+            }
+            return x/y;
+        };
+        try {
+            System.out.println(div.apply(1, 0));
+        } catch (ArithmeticException e){
+            System.out.println("Error message: " + e.getMessage());
+        };
 
         // Задача2: Создайте анонимный класс, реализующий интерфейс Runnable, который выводит сообщение "Hello from anonymous class!".
         Runnable r = new Runnable() {
@@ -29,8 +38,8 @@ public class MainForFIAndLambda {
         System.out.println(isNumberEven.test(9));
 
         // Задача4: Создайте лямбду, которая принимает строку и возвращает её длину.
-        Function <String, Integer> returnSreungLength = (string) -> string.length();
-        System.out.println(returnSreungLength.apply("hello"));
+        Function <String, Integer> returnStringLength = (string) -> string.length();
+        System.out.println(returnStringLength.apply("hello"));
 
         // Задача5: Напишите лямбду, которая принимает строку и печатает её в консоль.
         Consumer<String> printString = (string) -> System.out.println(string);

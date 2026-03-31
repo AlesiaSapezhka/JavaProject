@@ -21,8 +21,8 @@ public class MainForStreamAPIGroup {
         //Задача: Напишите программу, которая принимает список чисел и группирует их на чётные и нечётные, используя Stream API.
 
         List <Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-        Map<String, List<Integer>> groupedNumbers = numbers.stream()
-                .collect(Collectors.groupingBy(num -> String.valueOf(num %2==0)));
+        Map<Boolean, List<Integer>> groupedNumbers = numbers.stream()
+                .collect(Collectors.groupingBy(num -> num %2==0));
 
         System.out.println("Is number even?" + groupedNumbers);
 

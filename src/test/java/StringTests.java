@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
+import practice10.MethodsForStrings;
 
 public class StringTests {
 

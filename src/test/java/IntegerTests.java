@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
+import practice10.MethodsForIntegers;
 
 public class IntegerTests {
 

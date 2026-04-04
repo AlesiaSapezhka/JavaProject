@@ -3,6 +3,10 @@ package PreparationsForInterview.Collections;
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
+
+
+
+
         // 1. Хранение списка книг
         // Пользователь вводит названия книг. Храни все введённые книги и выведи их в порядке добавления.
         List<String> books = new ArrayList<>();

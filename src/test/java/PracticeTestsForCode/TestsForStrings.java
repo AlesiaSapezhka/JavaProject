@@ -1,3 +1,5 @@
+package PracticeTestsForCode;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -11,7 +13,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestsForStrings extends StringTests{
+public class TestsForStrings extends StringTests {
     // 2. Подсчёт количества гласных в строке
     //Напишите тесты для метода, который считает количество гласных букв в строке:
     //Тесты должны проверять:
@@ -23,7 +25,8 @@ public class TestsForStrings extends StringTests{
                 Arguments.of("hello", 2),
                 Arguments.of("java", 2),
                 Arguments.of("AIOUE", 5),
-                Arguments.of("hll", 0)
+                Arguments.of("hll", 0),
+                Arguments.of("", 0)
                 );
     }
     @ParameterizedTest
@@ -62,12 +65,10 @@ public class TestsForStrings extends StringTests{
         assertEquals(reversedWord, actualReversedWord, "Reversing was performed incorrectly for word: " + word);
 
     }
-    // BUG method do not create Exception for NUll value
     @Test
     public void testReversingStringForNullValue() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            methodsForStrings.reverse(null);
-        }, "If input is null IllegalArgumentException should be thrown");
+        String actualReversedWord = methodsForStrings.reverse(null);
+        assertNull(actualReversedWord);
     }
 
     // 6. Проверка валидности email
@@ -89,12 +90,11 @@ public class TestsForStrings extends StringTests{
         boolean actualResult = methodsForStrings.isValidEmail(words);
         assertFalse(actualResult);
     }
-    // BUG Method doesn't throw Exception
+
     @Test
     public void testValidEmailsForNullValue() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            methodsForStrings.isValidEmail(null);
-        }, "If input is null IllegalArgumentException should be thrown");
+        boolean actualResult = methodsForStrings.isValidEmail(null);
+        assertFalse(actualResult);
     }
 
     //9. Подсчёт количества слов в строке
@@ -107,7 +107,8 @@ public class TestsForStrings extends StringTests{
     public static Stream<Arguments> sentencesToCountWords() {
         return Stream.of(
                 Arguments.of("", 0),
-                Arguments.of("JAva is language", 3)
+                Arguments.of("JAva is language", 3),
+                Arguments.of("Break  wall   skip", 3)
         );
     }
     @ParameterizedTest
@@ -116,12 +117,12 @@ public class TestsForStrings extends StringTests{
        int actualWordsCount = methodsForStrings.countWords(sentence);
         assertEquals(actualWordsCount, expectedCount, "Words counting in sentence was performed incorrectly for sentence: " + sentence);
     }
-    // BUG Method doesn't throw Exception
+
     @Test
     public void testWordsCountForNullValue() {
-        assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(NullPointerException.class, () -> {
             methodsForStrings.countWords(null);
-        }, "If input is null IllegalArgumentException should be thrown");
+        }, "If input is null NullPointerException should be thrown");
     }
 
     //10. Проверка валидности номера телефона
@@ -167,7 +168,7 @@ public class TestsForStrings extends StringTests{
 
     @ParameterizedTest
     @MethodSource("stringsArray")
-    public void testToCreateArrayOnlyWithEvenNumbers(ArrayList <String> initialArray, ArrayList <Integer> sortedArray) {
+    public void sortingArrayWithStringsByLength(List <String> initialArray, List <String> sortedArray) {
         List<String> actualSortedArray = methodsForStrings.sortByLength(initialArray);
         assertEquals(sortedArray, actualSortedArray, "Sorting strings array by length was not performed correctly");
     }

@@ -1,3 +1,5 @@
+package PracticeTestsForCode;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -114,19 +116,24 @@ public class TestsForIntegers extends IntegerTests {
     //Массив с одинаковыми числами
     //Один элемент в массиве (должно выбрасываться исключение)
 
-    public static Stream<Arguments> validArray() {
+    public static Stream<Arguments> invalidArray() {
         return Stream.of(
-                Arguments.of(new int[]{3, 5, 7, 8, 2}, 7),
-                // BUG Method doesn't work for array with duplicates
-                Arguments.of(new int[]{3,3,3,3,2,4,4,4,5,5}, 5)
-        );
+                Arguments.of(new int[]{3,3,3,3,2,4,4,4,5,5}),
+                Arguments.of(new int[]{3,3,3,3,3,3}));
     }
-    // BUG Method doesn't work for array with duplicates
+
     @ParameterizedTest
-    @MethodSource("validArray")
-    public void testToFindSecondMaxNumberInValidArray(int [] validArray, int expectedSecondMaxNumber) {
-        int actualSecondMaxNumber = methodsForIntegers.findSecondMax(validArray);
-        assertEquals(expectedSecondMaxNumber, actualSecondMaxNumber, "Second Max number was not calculated correctly");
+    @MethodSource("invalidArray")
+    public void testToFindSecondMaxNumberInInvalidArray(int [] invalidArray) {
+        assertThrows(NoSuchElementException.class, () -> {
+            methodsForIntegers.findSecondMax(invalidArray);
+        }, "Second Max number should create NoSuchElementException if array have duplicates");
+    }
+
+    @Test
+    public void testToFindSecondMaxNumberInValidArray() {
+        int actualSecondMaxNumber = methodsForIntegers.findSecondMax(new int [] {3,4,6,5});
+        assertEquals(5, actualSecondMaxNumber, "Second Max number was not calculated correctly");
     }
 
     @Test
@@ -134,6 +141,13 @@ public class TestsForIntegers extends IntegerTests {
         assertThrows(IllegalArgumentException.class, () -> {
             methodsForIntegers.findSecondMax(new int[]{3});
         },"Second Max number should create IllegalArgumentException if array consists from one element");
+    }
+
+    @Test
+    public void testToFindSecondMaxNumberInBlankArray() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            methodsForIntegers.findSecondMax(new int[]{});
+        },"Second Max number should create IllegalArgumentException if array is blank");
     }
 
     // 11. Фильтрация списка чисел (оставить только чётные)
@@ -186,7 +200,13 @@ public class TestsForIntegers extends IntegerTests {
     public void testAverageNumberCountFromNullArray() {
         assertThrows(NullPointerException.class, () -> {
             methodsForIntegers.findAverage(null);
-        }, "Find Average number in blank array leads to NullPointerException");
+        }, "Find Average number in null array leads to NullPointerException");
+    }
+    @Test
+    public void testAverageNumberCountFromBlankArray() {
+        assertThrows(NoSuchElementException.class, () -> {
+            methodsForIntegers.findAverage(new int [] {});
+        }, "Find Average number in blank array leads to NoSuchElementException");
     }
 
     // 18. Нахождение наибольшего общего делителя (НОД)

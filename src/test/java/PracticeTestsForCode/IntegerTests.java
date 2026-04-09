@@ -1,3 +1,5 @@
+package PracticeTestsForCode;
+
 import org.junit.jupiter.api.BeforeEach;
 import practice10.MethodsForIntegers;
 
@@ -7,6 +9,7 @@ public class IntegerTests {
 
     @BeforeEach
     public void setup() {
+
         methodsForIntegers =  new MethodsForIntegers();
     }
 }

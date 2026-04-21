@@ -1,9 +1,9 @@
-package ComplexTasks.EntitManager;
+package ComplexTasks.EntityManager;
 
 public class Entity {
-    private String name;
-    private int age;
-    private boolean isActive;
+    private final String name;
+    private final int age;
+    private final boolean isActive;
 
     public Entity(String name, int age, boolean isActive) {
         this.name = name;
@@ -15,6 +15,7 @@ public class Entity {
         return age;
 
     }
+
     public String getName() {
         return name;
     }
@@ -25,10 +26,6 @@ public class Entity {
 
     @Override
     public String toString() {
-        return "Entity{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", isActive=" + isActive +
-                '}';
+        return "Entity{" + "name='" + name + '\'' + ", age=" + age + ", isActive=" + isActive + '}';
     }
 }

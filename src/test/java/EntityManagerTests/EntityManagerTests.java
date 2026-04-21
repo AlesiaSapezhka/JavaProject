@@ -1,13 +1,16 @@
 package EntityManagerTests;
-import ComplexTasks.EntitManager.Entity;
-import ComplexTasks.EntitManager.EntityManager;
+
+import ComplexTasks.EntityManager.Entity;
+import ComplexTasks.EntityManager.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-public class EntityManagerTests extends EntityManager {
+public class EntityManagerTests {
     private EntityManager<Entity> entityManager;
 
     @BeforeEach
@@ -131,4 +134,4 @@ public class EntityManagerTests extends EntityManager {
         List<Entity> result = entityManager.filteredByIsActive(true);
         assertTrue(result.isEmpty());
     }
-    }
+}

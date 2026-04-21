@@ -1,8 +1,9 @@
 package ComplexTasks.User;
 
-public class UserValidator <T extends User>{
+public class UserValidator<T extends User> {
     //Управление валидацией: Валидация данных должна происходить только если флаг validationEnabled установлен в true.
     private boolean validationEnabled;
+
     public void setValidationEnabled(boolean validationEnabled) {
         this.validationEnabled = validationEnabled;
     }
@@ -33,7 +34,7 @@ public class UserValidator <T extends User>{
 
     //Проверка возраста: Возраст должен быть в пределах от 18 до 100 лет.
     public boolean isAgeValid(int userAge) {
-        return ( userAge>=18 && userAge<=100);
+        return (userAge >= 18 && userAge <= 100);
     }
 
     //Проверка email: Email должен соответствовать стандартному формату электронной почты.

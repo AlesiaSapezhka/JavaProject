@@ -1,4 +1,4 @@
-package ComplexTasks.EntitManager;
+package ComplexTasks.EntityManager;
 
 public class Main {
     public static void main(String[] args) {

@@ -9,25 +9,25 @@ import java.util.stream.Collectors;
 //    Метод для расчёта среднего значения оценок по конкретному предмету.
 //    Обработка исключений через InvalidGradeException, если оценка некорректна.
 
-    public class GradeService<T extends Number> {
+public class GradeService<T extends Number> {
 
-        List<StudentGrade<T>> studentGradeList = new ArrayList<>();
+    List<StudentGrade<T>> studentGradeList = new ArrayList<>();
 
-        public List<StudentGrade<T>> getAllGrades() {
-            return List.copyOf(studentGradeList);
+    public List<StudentGrade<T>> getAllGrades() {
+        return List.copyOf(studentGradeList);
+    }
+
+    public void addGrade(StudentGrade<T> studentGrade) throws InvalidGradeException {
+
+        if (studentGrade.getGrade() == null) {
+            throw new InvalidGradeException("Mark cannot be null");
         }
 
-        public void addGrade(StudentGrade<T> studentGrade) throws InvalidGradeException {
+        if (studentGrade.getGrade().doubleValue() < 0) {
+            throw new InvalidGradeException("Mark cannot be less than 0");
+        }
 
-            if (studentGrade.getMark() == null) {
-                throw new InvalidGradeException("Mark cannot be null");
-            }
-
-            if (studentGrade.getMark().doubleValue() < 0) {
-                throw new InvalidGradeException("Mark cannot be less than 0");
-            }
-
-            studentGradeList.add(studentGrade);
+        studentGradeList.add(studentGrade);
     }
 
     public double countAverageGrade(String subject) {
@@ -35,15 +35,12 @@ import java.util.stream.Collectors;
             return 0;
         }
 
-        List <StudentGrade <T>> filtered =  studentGradeList.stream()
-                .filter(str -> str.getSubject().equals(subject)).collect(Collectors.toList());
+        List<StudentGrade<T>> filtered = studentGradeList.stream().filter(str -> str.getSubject().equals(subject)).collect(Collectors.toList());
 
         if (filtered.isEmpty()) {
             return 0;
         }
-        double sum = filtered.stream()
-                .mapToDouble(grade -> grade.getMark().doubleValue())
-                .sum();
+        double sum = filtered.stream().mapToDouble(grade -> grade.getGrade().doubleValue()).sum();
 
         return sum / filtered.size();
     }

@@ -1,14 +1,14 @@
 package ComplexTasks.Movie;
 
-public class  Rating<T extends Number>{
-    private T rating;
+public class Rating<T extends Number> {
+    private final T rating;
 
-    public Rating(T rating){
+    public Rating(T rating) {
         this.rating = rating;
     }
 
-    public T getRating(){
-       return rating;
+    public T getRating() {
+        return rating;
     }
 
     public double getDoubleValue() {

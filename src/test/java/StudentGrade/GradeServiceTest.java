@@ -10,20 +10,23 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class GradeServiceTest extends GradeService {
+public class GradeServiceTest {
 
     public static Stream<Arguments> invalidStudentsGradeInteger() {
-        return Stream.of(
-                Arguments.of("math", -7, "Alex"),
-                Arguments.of("math", null, "Alex"));
+        return Stream.of(Arguments.of("math", -7, "Alex"), Arguments.of("math", null, "Alex"));
+    }
+
+    public static Stream<Arguments> invalidStudentsGradeDouble() {
+        return Stream.of(Arguments.of("math", -7.9, "Alex"), Arguments.of("math", null, "Alex"));
     }
 
     @ParameterizedTest
     @MethodSource("invalidStudentsGradeInteger")
     public void testInvalidGradesInteger(String subject, Integer mark, String name) {
-        GradeService<Integer> gradeService = new GradeService<>();;
+        GradeService<Integer> gradeService = new GradeService<>();
         StudentGrade<Integer> grade = new StudentGrade<>(subject, mark, name);
 
         assertThrows(InvalidGradeException.class, () -> {
@@ -31,16 +34,10 @@ public class GradeServiceTest extends GradeService {
         }, "If grade is null or invalid InvalidGradeException should be thrown");
     }
 
-    public static Stream<Arguments> invalidStudentsGradeDouble() {
-        return Stream.of(
-                Arguments.of("math", -7.9, "Alex"),
-                Arguments.of("math", null, "Alex"));
-    }
-
     @ParameterizedTest
     @MethodSource("invalidStudentsGradeDouble")
     public void testInvalidGradesDouble(String subject, Double mark, String name) {
-        GradeService<Double> gradeService = new GradeService<>();;
+        GradeService<Double> gradeService = new GradeService<>();
         StudentGrade<Double> grade = new StudentGrade<>(subject, mark, name);
 
         assertThrows(InvalidGradeException.class, () -> {

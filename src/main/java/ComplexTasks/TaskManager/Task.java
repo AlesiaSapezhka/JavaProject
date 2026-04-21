@@ -1,31 +1,30 @@
 package ComplexTasks.TaskManager;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Task <T>{
+public class Task<T> {
     //Task<T>: Класс, представляющий задачу. Должен содержать поля для ID, статуса, приоритета и даты.
-    private String taskId;
-    private String status;
-    private int priority;
-    private LocalDate date;
+    private final T taskId;
+    private final T status;
+    private final T priority;
+    private final LocalDate date;
 
-    public Task(String taskId, String status, int priority, LocalDate date) {
+    public Task(T taskId, T status, T priority, LocalDate date) {
         this.taskId = taskId;
         this.status = status;
         this.priority = priority;
         this.date = date;
     }
 
-    public String getTaskId() {
+    public T getTaskId() {
         return taskId;
     }
 
-    public String getStatus() {
+    public T getStatus() {
         return status;
     }
 
-    public int getPriority() {
+    public T getPriority() {
         return priority;
     }
 
@@ -35,11 +34,6 @@ public class Task <T>{
 
     @Override
     public String toString() {
-        return "Task{" +
-                "status='" + status + '\'' +
-                ", priority=" + priority +
-                ", date=" + date +
-                ", taskId='" + taskId + '\'' +
-                '}';
+        return "Task{" + "status='" + status + '\'' + ", priority=" + priority + ", date=" + date + ", taskId='" + taskId + '\'' + '}';
     }
 }

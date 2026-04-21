@@ -1,9 +1,9 @@
 package ComplexTasks.Storage;
 
 public class Product {
-    private String productName;
-    private double price;
-    private String category;
+    private final String productName;
+    private final double price;
+    private final String category;
 
     public Product(String productName, double price, String category) {
         this.productName = productName;

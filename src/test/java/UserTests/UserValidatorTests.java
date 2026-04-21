@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class UserValidatorTests extends UserValidator {
+public class UserValidatorTests {
     private UserValidator userValidator;
 
     @BeforeEach
@@ -38,14 +38,14 @@ public class UserValidatorTests extends UserValidator {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {18,67,100,34})
+    @ValueSource(ints = {18, 67, 100, 34})
     public void validAgeValidator(int age) {
         boolean actualAge = userValidator.isAgeValid(age);
         assertTrue(actualAge);
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {-18,7,0,120})
+    @ValueSource(ints = {-18, 7, 0, 120})
     public void notValidAgeValidator(int age) {
         boolean actualAge = userValidator.isAgeValid(age);
         assertFalse(actualAge);
@@ -54,14 +54,14 @@ public class UserValidatorTests extends UserValidator {
     @ParameterizedTest
     @ValueSource(strings = {"test@example.com", "goodEmail@vk.com", "no-at-symbol@email.com"})
     public void testValidEmails(String words) {
-        boolean actualResult =  userValidator.isValidEmail(words);
+        boolean actualResult = userValidator.isValidEmail(words);
         assertTrue(actualResult);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"test@.com", "bad@.com", "no-at-symbol", "", "3456", })
+    @ValueSource(strings = {"test@.com", "bad@.com", "no-at-symbol", "", "3456",})
     public void testInvalidEmails(String words) {
-        boolean actualResult =  userValidator.isValidEmail(words);
+        boolean actualResult = userValidator.isValidEmail(words);
         assertFalse(actualResult);
     }
 
@@ -70,7 +70,7 @@ public class UserValidatorTests extends UserValidator {
     public void checkAllValuesException() {
         userValidator.setValidationEnabled(true);
         assertThrows(InvalidUserException.class, () -> {
-            userValidator.checkAllValues("Ivan",76, "34yh.com");
+            userValidator.checkAllValues("Ivan", 76, "34yh.com");
         }, "If input is invalid InvalidUserException should be thrown");
     }
 }

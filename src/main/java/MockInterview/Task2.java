@@ -3,6 +3,7 @@ package MockInterview;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Task2 {
     public static void main(String[] args) {
         //Метод должен вывести:
@@ -13,17 +14,12 @@ public class Task2 {
         Employee empl1 = new EmployeePercent("Alex", 10.5, 1000);
         Employee empl2 = new EmployeePerHour("Mary", 180, 0);
         Employee empl3 = new EmployeeFixSalary("Alice", -2000);
-
         List<Employee> employees = new ArrayList<Employee>();
         employees.add(empl1);
         employees.add(empl2);
         employees.add(empl3);
-
         SalaryManager manager = new SalaryManager();
         manager.paySalaryToEmployees(employees);
-
-
-
 
 
         // Система работает с разными типами сотрудников:
@@ -48,9 +44,5 @@ public class Task2 {
         //Каждый тип сотрудника должен сам рассчитывать свою зарплату.
         //
 
-
-
-
     }
-
 }

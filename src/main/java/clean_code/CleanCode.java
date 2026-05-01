@@ -11,7 +11,7 @@ public class CleanCode {
        System.out.println(calculateDiscount(70,true, true, false));
 
 
-       Payment pay1 = new BitcoinPayment("bitcoin", 68);
+       Payment pay1 = new BitcoinPayment(68);
        PaymentProcessor processor = new PaymentProcessor();
        processor.processPayment(pay1);
     }

@@ -2,9 +2,9 @@ package clean_code;
 
 public class NotificationService {
 
-    private NotificationSendler notificationSender;
+    private NotificationSender notificationSender;
 
-    public NotificationService(NotificationSendler notificationSender) {
+    public NotificationService(NotificationSender notificationSender) {
         this.notificationSender = notificationSender;
     }
 

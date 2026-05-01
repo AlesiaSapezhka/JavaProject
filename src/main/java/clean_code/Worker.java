@@ -1,10 +1,6 @@
 package clean_code;
 
-public class Worker implements Eatable, Workable {
-    @Override
-    public void eat() {
-        throw new UnsupportedOperationException("Программист не ест на работе");
-    }
+public class Worker implements Workable {
 
     @Override
     public void work() {

@@ -1,5 +1,5 @@
 package clean_code;
 
-public abstract class NotificationSendler {
+public abstract class NotificationSender {
     public abstract void sendNotification(String message);
 }

@@ -1,8 +1,8 @@
 package clean_code;
 
 public class BitcoinPayment  extends Payment{
-    public  BitcoinPayment (String paymentType, double amount) {
-        super(paymentType, amount);
+    public  BitcoinPayment (double amount) {
+        super(amount);
     }
 
     public void pay(double amount){

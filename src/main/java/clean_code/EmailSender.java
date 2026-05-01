@@ -1,6 +1,6 @@
 package clean_code;
 
-class EmailSender extends NotificationSendler {
+class EmailSender extends NotificationSender {
 
     @Override
     public void sendNotification(String message) {

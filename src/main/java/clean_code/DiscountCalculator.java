@@ -7,7 +7,7 @@ public class DiscountCalculator {
         if (isLoyalCustomer) {
             discount = discountForFirstPurchase(isFirstPurchase, price);
         } else {
-            discount = discountIfHasCoupon(isFirstPurchase, price);
+            discount = discountIfHasCoupon(hasCoupon, price);
         }
         return price - discount;
     }

@@ -1,8 +1,8 @@
 package clean_code;
 
 public class CreditCardPayment extends Payment{
-    public CreditCardPayment(String paymentType, double amount) {
-        super(paymentType, amount);
+    public CreditCardPayment(double amount) {
+        super(amount);
     }
 
     public void pay(double amount){

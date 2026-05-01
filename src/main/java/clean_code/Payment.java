@@ -1,17 +1,11 @@
 package clean_code;
 
 public abstract class Payment {
-    private String paymentType;
     private double amount;
 
 
-    public Payment(String paymentType, double amount) {
-        this.paymentType = paymentType;
+    public Payment(double amount) {
         this.amount = amount;
-    }
-
-    public String getPaymentType() {
-        return paymentType;
     }
 
     public double getAmount() {

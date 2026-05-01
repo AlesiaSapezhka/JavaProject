@@ -1,8 +1,8 @@
 package clean_code;
 
 public class PayPalPayment extends Payment{
-    public PayPalPayment(String paymentType, double amount) {
-        super(paymentType, amount);
+    public PayPalPayment(double amount) {
+        super(amount);
     }
 
     public void pay(double amount){

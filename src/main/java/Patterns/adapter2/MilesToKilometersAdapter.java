@@ -1,6 +1,6 @@
 package Patterns.adapter2;
 
-public class MilesToKilometersAdapter {
+public class MilesToKilometersAdapter implements Distance{
 
     private Miles miles;
 
@@ -8,7 +8,8 @@ public class MilesToKilometersAdapter {
         this.miles = miles;
     }
 
-    public double convertMilesToKilometers() {
-        return miles.getDistance() * 1.60934;
+    @Override
+    public double getDistance() {
+        return miles.getMiles() * 1.60934;
     }
 }

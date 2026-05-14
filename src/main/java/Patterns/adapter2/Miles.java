@@ -1,14 +1,13 @@
 package Patterns.adapter2;
 
-public class Miles implements Distance {
+public class Miles {
     private double miles;
 
     public Miles(double miles) {
         this.miles = miles;
     }
 
-    @Override
-    public double getDistance() {
+    public double getMiles() {
         return miles;
     }
 }

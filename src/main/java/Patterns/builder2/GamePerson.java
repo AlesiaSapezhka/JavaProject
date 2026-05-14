@@ -1,12 +1,12 @@
 package Patterns.builder2;
 
 public class GamePerson {
-    String health;
-    String damage;
-    String armor;
-    String magic;
+    int health;
+    int damage;
+    int armor;
+    int magic;
 
-    public GamePerson(String health, String damage, String armor, String magic) {
+    public GamePerson(int health, int damage, int armor, int magic) {
         this.health = health;
         this.damage = damage;
         this.armor = armor;
@@ -23,27 +23,27 @@ public class GamePerson {
         return "Gamer characteristics: " + " health: " + this.health + " damage: " + this.damage +  " armor: " + this.armor + " magic: " + this.magic;
     }
     static class PersonBuilder{
-        String health;
-        String damage;
-        String armor;
-        String magic;
+        int health;
+        int damage;
+        int armor;
+        int magic;
 
-        public PersonBuilder setHealth(String health) {
+        public PersonBuilder setHealth(int health) {
             this.health = health;
             return this;
         }
 
-        public PersonBuilder setDamage(String damage) {
+        public PersonBuilder setDamage(int damage) {
             this.damage = damage;
             return this;
         }
 
-        public PersonBuilder setArmor(String armor) {
+        public PersonBuilder setArmor(int armor) {
             this.armor = armor;
             return this;
         }
 
-        public PersonBuilder setMagic(String magic) {
+        public PersonBuilder setMagic(int magic) {
             this.magic = magic;
             return this;
         }
